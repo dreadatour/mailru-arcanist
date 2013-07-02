@@ -20,19 +20,19 @@ else
     git clone git://github.com/facebook/arcanist.git "$PHP_DIR/arcanist"
 fi
 
-# Install or update marcanist
-echo "Updating marcanist.."
-if [ -e "$PHP_DIR/marcanist" ]; then
-    cd "$PHP_DIR/marcanist" && git pull origin master
+# Install or update mailru-arcanist
+echo "Updating mailru-arcanist.."
+if [ -e "$PHP_DIR/libmailru" ]; then
+    cd "$PHP_DIR/libmailru" && git pull origin master
 else
-    git clone git://github.com/pzinovkin/marcanist.git "$PHP_DIR/marcanist"
+    git clone git://github.com/pzinovkin/mailru-arcanist.git "$PHP_DIR/libmailru"
 fi
 
 # Register arc commands
 echo "Registering arc commands.."
 
 ## arc
-echo "php $PHP_DIR/arcanist/scripts/arcanist.php  --load-phutil-library='$PHP_DIR/marcanist/src' \"\$@\"" > "$BIN_DIR/arc"
+echo "php $PHP_DIR/arcanist/scripts/arcanist.php  --load-phutil-library='$PHP_DIR/libmailru/src' \"\$@\"" > "$BIN_DIR/arc"
 chmod +x "$BIN_DIR/arc"
 
 echo "Done!"

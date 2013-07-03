@@ -36,3 +36,9 @@ echo "php $PHP_DIR/arcanist/scripts/arcanist.php  --load-phutil-library='$PHP_DI
 chmod +x "$BIN_DIR/arc"
 
 echo "Done!"
+echo
+echo "If you use bash or zsh, you can set up tab completion by adding "
+echo "something like this to your .bashrc, .zshrc, .profile or similar:"
+echo
+echo "source /usr/local/include/php/arcanist/resources/shell/bash-completion"
+echo

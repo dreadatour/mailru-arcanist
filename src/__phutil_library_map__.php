@@ -10,6 +10,7 @@ phutil_register_library_map(array(
   '__library_version__' => 2,
   'class' =>
   array(
+    'JenkinsDiffEventListener' => 'event/JenkinsDiffEventListener.php',
     'MailruLintEngine' => 'lint/engine/MailruLintEngine.php',
   ),
   'function' =>
@@ -17,6 +18,7 @@ phutil_register_library_map(array(
   ),
   'xmap' =>
   array(
+    'JenkinsDiffEventListener' => 'PhutilEventListener',
     'MailruLintEngine' => 'ArcanistLintEngine',
   ),
 ));

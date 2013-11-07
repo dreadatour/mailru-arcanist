@@ -10,13 +10,10 @@ class JenkinsDiffEventListener extends PhutilEventListener {
   public function handleEvent(PhutilEvent $event) {
     $diff_id = $event->getValue('diffID');
 
-    /* Need to send a get request to jenkins to trigger the job. We pass the
-     * diff id to jenkins via its api.
-     */
     $workflow = $event->getValue('workflow');
-    $uri = $workflow->getConfigFromWhateverSourceAvailiable('jenkins.uri');
-    $job = $workflow->getConfigFromWhateverSourceAvailiable('jenkins.job');
-    $token = $workflow->getConfigFromWhateverSourceAvailiable('jenkins.token');
+    $uri = $workflow->getConfigFromAnySource('jenkins.uri');
+    $job = $workflow->getConfigFromAnySource('jenkins.job');
+    $token = $workflow->getConfigFromAnySource('jenkins.token');
 
     if (!$uri || !$job || !$token) {
       return;

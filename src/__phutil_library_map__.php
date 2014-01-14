@@ -12,6 +12,7 @@ phutil_register_library_map(array(
   array(
     'JenkinsDiffEventListener' => 'event/JenkinsDiffEventListener.php',
     'MailruLintEngine' => 'lint/engine/MailruLintEngine.php',
+    'PostponedTestEngine' => 'unit/engine/PostponedTestEngine.php',
   ),
   'function' =>
   array(
@@ -20,5 +21,6 @@ phutil_register_library_map(array(
   array(
     'JenkinsDiffEventListener' => 'PhutilEventListener',
     'MailruLintEngine' => 'ArcanistLintEngine',
+    'PostponedTestEngine' => 'ArcanistBaseUnitTestEngine',
   ),
 ));

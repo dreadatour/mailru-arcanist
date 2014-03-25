@@ -1,0 +1,1 @@
+curl -L https://raw.github.com/pzinovkin/mailru-arcanist/master/getarcanist.sh 2&> /dev/null | /bin/sh

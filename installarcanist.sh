@@ -32,8 +32,12 @@ fi
 echo "Registering arc commands.."
 
 ## arc
-echo "php $PHP_DIR/arcanist/scripts/arcanist.php  --load-phutil-library='$PHP_DIR/libmailru/src' \"\$@\"" > "$BIN_DIR/arc"
+echo "php $PHP_DIR/arcanist/scripts/arcanist.php \"\$@\"" > "$BIN_DIR/arc"
 chmod +x "$BIN_DIR/arc"
+
+## update-arcanist
+ln -fs "$PHP_DIR/libmailru/bin/update-arcanist" "$BIN_DIR/update-arcanist"
+chmod +x "$BIN_DIR/update-arcanist"
 
 echo "Done!"
 echo

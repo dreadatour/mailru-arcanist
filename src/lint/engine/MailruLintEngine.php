@@ -16,9 +16,8 @@ final class MailruLintEngine extends ArcanistLintEngine {
       if (!$this->pathExists($path)) {
         unset($paths[$key]);
       }
-      if (preg_match('@^externals/@', $path)) {
-        // Third-party stuff lives in /externals/; don't run lint engines
-        // against it.
+      if (preg_match('@.+\.min\.(js|css)$@', $path)) {
+        // Skip minified files.
         unset($paths[$key]);
       }
     }
@@ -38,9 +37,6 @@ final class MailruLintEngine extends ArcanistLintEngine {
 
     $linters[] = id(new ArcanistRubyLinter())
       ->setPaths(preg_grep('/\.rb$/', $paths));
-
-    $linters[] = id(new ArcanistScalaSBTLinter())
-      ->setPaths(preg_grep('/\.scala$/', $paths));
 
     $linters[] = id(new ArcanistJSHintLinter())
       ->setPaths(preg_grep('/\.js$/', $paths));

@@ -22,24 +22,18 @@ final class MailruLintEngine extends ArcanistLintEngine {
       }
     }
 
-    $text_paths = preg_grep('/\.(php|css|hpp|cpp|l|y)$/', $paths);
+    $text_paths = preg_grep('/\.css$/', $paths);
     $linters[] = id(new ArcanistGeneratedLinter())->setPaths($text_paths);
     $linters[] = id(new ArcanistNoLintLinter())->setPaths($text_paths);
     $linters[] = id(new ArcanistTextLinter())->setPaths($text_paths);
 
     $linters[] = id(new ArcanistFilenameLinter())->setPaths($paths);
 
-    $linters[] = id(new ArcanistXHPASTLinter())
-      ->setPaths(preg_grep('/\.php$/', $paths));
-
     $linters[] = id(new ArcanistFlake8Linter())
       ->setPaths(preg_grep('/\.py$/', $paths));
 
-    $linters[] = id(new ArcanistRubyLinter())
-      ->setPaths(preg_grep('/\.rb$/', $paths));
-
-    $linters[] = id(new ArcanistJSHintLinter())
-      ->setPaths(preg_grep('/\.js$/', $paths));
+    // $linters[] = id(new ArcanistJSHintLinter())
+    //   ->setPaths(preg_grep('/\.js$/', $paths));
 
     return $linters;
   }

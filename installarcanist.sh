@@ -25,7 +25,7 @@ echo "Updating mailru-arcanist.."
 if [ -e "$PHP_DIR/libmailru" ]; then
     cd "$PHP_DIR/libmailru" && git pull origin master
 else
-    git clone git://github.com/pzinovkin/mailru-arcanist.git "$PHP_DIR/libmailru"
+    git clone git://github.com/dreadatour/mailru-arcanist.git "$PHP_DIR/libmailru"
 fi
 
 # Register arc commands

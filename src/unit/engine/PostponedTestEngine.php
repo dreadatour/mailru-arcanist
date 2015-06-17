@@ -3,7 +3,7 @@
 /**
  * @group unitrun
  */
-final class PostponedTestEngine extends ArcanistBaseUnitTestEngine {
+final class PostponedTestEngine extends ArcanistUnitTestEngine {
 
   public function run() {
     $result = id(new ArcanistUnitTestResult())
